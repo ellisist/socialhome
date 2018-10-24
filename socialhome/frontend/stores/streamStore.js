@@ -130,14 +130,14 @@ function newRestAPI(options) {
         })
         .get({
             action: streamStoreOperations.getReplies,
-            path: ({id}) => Urls["api:content-replies"]({pk: id}),
+            path: ({uuid}) => Urls["api:content-replies"]({uuid: uuid}),
             property: "replies",
             onSuccess: fetchRepliesSuccess,
             onError,
         })
         .get({
             action: streamStoreOperations.getShares,
-            path: ({id}) => Urls["api:content-shares"]({pk: id}),
+            path: ({uuid}) => Urls["api:content-shares"]({uuid: uuid}),
             property: "shares",
             onSuccess: fetchSharesSuccess,
             onError,
@@ -151,7 +151,7 @@ function newRestAPI(options) {
         })
         .get({
             action: streamStoreOperations.getNewContent,
-            path: ({pk}) => Urls["api:content-detail"]({pk}),
+            path: ({uuid}) => Urls["api:content-detail"]({uuid}),
             property: "contents",
             onSuccess: fetchNewContentSuccess,
             onError,

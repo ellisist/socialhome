@@ -66,6 +66,7 @@ class ContentViewSet(mixins.CreateModelMixin, mixins.RetrieveModelMixin, mixins.
     queryset = Content.objects.none()
     serializer_class = ContentSerializer
     permission_classes = (IsOwnContentOrReadOnly,)
+    lookup_field = 'uuid'
 
     def _share(self):
         content = self.get_object()

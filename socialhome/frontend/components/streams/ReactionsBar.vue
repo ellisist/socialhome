@@ -83,7 +83,7 @@ export default Vue.component("reactions-bar", {
         },
         urls() {
             return {
-                share: Urls["api:content-share"]({pk: this.content.id}),
+                share: Urls["api:content-share"]({uuid: this.content.uuid}),
             }
         },
     },
